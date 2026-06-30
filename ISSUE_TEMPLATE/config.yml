@@ -1,0 +1,8 @@
+# Configuración del selector (chooser) de plantillas de Issues.
+# Al deshabilitar los issues en blanco se obliga a usar una de las plantillas,
+# lo que garantiza información estructurada y facilita el triage.
+blank_issues_enabled: false
+contact_links:
+  - name: "💬 Consultas generales"
+    url: https://github.com/USUARIO/REPOSITORIO/discussions
+    about: "Para preguntas o dudas que no son un bug ni un pedido de funcionalidad, usá Discussions."
