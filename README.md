@@ -54,3 +54,4 @@ Para ejecutarlo de forma semanal, ver la configuración de `crontab` en el infor
 ## Registro de commits automáticos
 <!-- Esta sección la completa automáticamente el script commit_semanal.sh -->
 - 2026-06-30 11:34:07 | Commit semanal: 1 líneas modificadas (+1 / -0).
+- 2026-06-30 11:34:24 | ALERTA: no se realizaron commits (sin cambios en el repositorio).
