@@ -47,9 +47,9 @@ Para ejecutarlo de forma semanal, ver la configuración de `crontab` en el infor
 
 ## Integrantes
 
-- [Nombre Apellido] — [Nº estudiante]
-- [Nombre Apellido] — [Nº estudiante]
-- [Nombre Apellido] — [Nº estudiante]
+- [Facundo Recalt] — [Nº estudiante]
+- [Santiago Muñoz ] — [Nº estudiante]
+- [Francisco Kehyaian] — [Nº estudiante: 390704]
 
 ## Registro de commits automáticos
 <!-- Esta sección la completa automáticamente el script commit_semanal.sh -->
