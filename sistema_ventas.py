@@ -22,9 +22,7 @@ import getpass
 DB = "ventas.db"
 
 
-# --------------------------------------------------------------------------- #
 # Base de datos
-# --------------------------------------------------------------------------- #
 def conectar():
     """Devuelve una conexión a la base SQLite con claves foráneas activas."""
     con = sqlite3.connect(DB)
@@ -65,10 +63,7 @@ def inicializar_bd():
             """
         )
 
-
-# --------------------------------------------------------------------------- #
 # feature/autenticacion
-# --------------------------------------------------------------------------- #
 def _hash(password: str, salt: str) -> str:
     """Hashea la contraseña con SHA-256 usando un salt aleatorio."""
     return hashlib.sha256((salt + password).encode("utf-8")).hexdigest()
@@ -112,10 +107,7 @@ def iniciar_sesion():
     print("Usuario o contraseña incorrectos.\n")
     return None
 
-
-# --------------------------------------------------------------------------- #
 # feature/alta-productos
-# --------------------------------------------------------------------------- #
 def alta_producto():
     nombre = input("Nombre del producto: ").strip()
     if not nombre:
@@ -157,9 +149,7 @@ def listar_productos():
     print()
 
 
-# --------------------------------------------------------------------------- #
 # feature/venta-productos
-# --------------------------------------------------------------------------- #
 def vender_producto(usuario_id: int):
     nombre = input("Nombre del producto a comprar: ").strip()
     try:
@@ -194,9 +184,7 @@ def vender_producto(usuario_id: int):
     print(f"Compra realizada: {cantidad} x {nombre} = ${total:.2f}\n")
 
 
-# --------------------------------------------------------------------------- #
 # Menús
-# --------------------------------------------------------------------------- #
 def menu_principal():
     print("===== Sistema de Gestión de Ventas =====")
     print("1) Iniciar sesión")
