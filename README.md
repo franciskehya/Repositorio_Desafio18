@@ -47,9 +47,9 @@ Para ejecutarlo de forma semanal, ver la configuración de `crontab` en el infor
 
 ## Integrantes
 
-- [Facundo Recalt] — [Nº estudiante: 378633]
-- [Santiago Muñoz ] — [Nº estudiante: 354222]
-- [Francisco Kehyaian] — [Nº estudiante: 390704]
+- Facundo Recalt — [Nº estudiante: 378633]
+- Santiago Muñoz — [Nº estudiante: 354222]
+- Francisco Kehyaian — [Nº estudiante: 390704]
 
 ## Registro de commits automáticos
 <!-- Esta sección la completa automáticamente el script commit_semanal.sh -->
