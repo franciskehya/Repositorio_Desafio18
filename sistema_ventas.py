@@ -94,7 +94,13 @@ def registrar_usuario():
 def iniciar_sesion():
     """Devuelve (id, usuario) si las credenciales son válidas, o None."""
     usuario = input("Usuario: ").strip()
+    if not usuario:
+        print("El usuario no puede estar vacío.\n")
+        return None
     password = getpass.getpass("Contraseña: ")
+    if not password:
+        print("La contraseña no puede estar vacía.\n")
+        return None
     with conectar() as con:
         fila = con.execute(
             "SELECT id, salt, hash_pass FROM usuarios WHERE usuario = ?",
@@ -116,11 +122,20 @@ def alta_producto():
     descripcion = input("Descripción: ").strip()
     try:
         precio = float(input("Precio: ").replace(",", "."))
-        stock = int(input("Stock: "))
-        if precio < 0 or stock < 0:
-            raise ValueError
     except ValueError:
-        print("Precio o stock inválidos.\n")
+        print("El precio debe ser un número. Ejemplo: 250 o 250.50\n")
+        return
+    if precio <= 0:
+        print("El precio debe ser mayor a 0.\n")
+        return
+
+    try:
+        stock = int(input("Stock: "))
+    except ValueError:
+        print("El stock debe ser un número entero. Ejemplo: 10\n")
+        return
+    if stock < 0:
+        print("El stock no puede ser negativo.\n")
         return
 
     try:
