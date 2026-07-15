@@ -94,7 +94,13 @@ def registrar_usuario():
 def iniciar_sesion():
     """Devuelve (id, usuario) si las credenciales son válidas, o None."""
     usuario = input("Usuario: ").strip()
+    if not usuario:
+        print("El usuario no puede estar vacío.\n")
+        return None
     password = getpass.getpass("Contraseña: ")
+    if not password:
+        print("La contraseña no puede estar vacía.\n")
+        return None
     with conectar() as con:
         fila = con.execute(
             "SELECT id, salt, hash_pass FROM usuarios WHERE usuario = ?",
