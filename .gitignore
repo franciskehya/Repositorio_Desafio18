@@ -1,0 +1,5 @@
+ventas.db
+*.db
+prueba.txt
+__pycache__/
+*.pyc
