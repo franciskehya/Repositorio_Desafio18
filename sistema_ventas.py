@@ -115,24 +115,18 @@ def iniciar_sesion():
 
 # feature/alta-productos
 def alta_producto():
-    nombre = input("Nombre del producto: ").strip()
+    def vender_producto(usuario_id: int):
+    nombre = input("Nombre del producto a comprar: ").strip()
     if not nombre:
-        print("El nombre es obligatorio.\n")
+        print("El nombre del producto es obligatorio.\n")
         return
-    descripcion = input("Descripción: ").strip()
     try:
-        precio = float(input("Precio: ").replace(",", "."))
+        cantidad = int(input("Cantidad: "))
     except ValueError:
-        print("El precio debe ser un número. Ejemplo: 250 o 250.50\n")
+        print("La cantidad debe ser un número entero. Ejemplo: 3\n")
         return
-    if precio <= 0:
-        print("El precio debe ser mayor a 0.\n")
-        return
-
-    try:
-        stock = int(input("Stock: "))
-    except ValueError:
-        print("El stock debe ser un número entero. Ejemplo: 10\n")
+    if cantidad <= 0:
+        print("La cantidad debe ser mayor a 0.\n")
         return
     if stock < 0:
         print("El stock no puede ser negativo.\n")
@@ -167,12 +161,16 @@ def listar_productos():
 # feature/venta-productos
 def vender_producto(usuario_id: int):
     nombre = input("Nombre del producto a comprar: ").strip()
+    if not nombre:
+        print("El nombre del producto es obligatorio.\n")
+        return
     try:
         cantidad = int(input("Cantidad: "))
-        if cantidad <= 0:
-            raise ValueError
     except ValueError:
-        print("Cantidad inválida.\n")
+        print("La cantidad debe ser un número entero. Ejemplo: 3\n")
+        return
+    if cantidad <= 0:
+        print("La cantidad debe ser mayor a 0.\n")
         return
 
     with conectar() as con:
